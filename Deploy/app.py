@@ -1,7 +1,6 @@
 import numpy as np
 import pickle
 from flask import Flask, render_template, request, jsonify
-from sklearn.ensemble import GradientBoostingRegressor
 
 app = Flask(__name__)
 model = pickle.load(open('regressor_gradient.pkl', 'rb'))
