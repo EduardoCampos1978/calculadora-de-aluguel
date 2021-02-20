@@ -5,7 +5,6 @@ class TelaPython:
     def __init__(self):
 
         layout = [
-            #[sg.Text('Zona', size=(10, 0)), sg.Input(size=(10, 0), key='zona')],
             [sg.Text('Zona', size=(10, 0)), 
              sg.Combo(values=('Norte', 'Sul', 'Leste', 'Oeste'), 
                       default_value=None, 
