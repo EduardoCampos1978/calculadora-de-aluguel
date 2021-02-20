@@ -5,17 +5,27 @@ class TelaPython:
     def __init__(self):
 
         layout = [
-            [sg.Text('Nome'), sg.Input()],
-            [sg.Text('Idade'), sg.Input()],
-            [sg.Button('Enviar Dados')] 
+            #[sg.Text('Zona', size=(10, 0)), sg.Input(size=(10, 0), key='zona')],
+            [sg.Text('Zona', size=(10, 0)), 
+             sg.Combo(values=('Norte', 'Sul', 'Leste', 'Oeste'), 
+                      default_value=None, 
+                      size=(8, 0), 
+                      key='zona')],
+
+            [sg.Text('Nº Quartos', size=(10, 0)), sg.Input(size=(10, 0), key='quartos')], 
+
+            [sg.Text('Área', size=(10, 0)), sg.Input(size=(10, 0), key='area')],
+
+            [sg.Button('Calcular')] 
         ]
 
-        janela = sg.Window('Dados do Usuário').layout(layout)
+        janela = sg.Window('Calculadora de Imóveis - SP').layout(layout)
         self.button, self.values = janela.Read()
 
     def iniciar(self):
         print(self.values)
 
-tela = TelaPython()
-tela.iniciar()
+if __name__ == '__main__':
+    tela = TelaPython()
+    tela.iniciar()
 
